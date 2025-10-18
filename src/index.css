@@ -3,3 +3,33 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
+
+
+
+
+/* ProductCard */
+.product-card {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  will-change: transform;
+  transform-origin: center;
+  position: relative; 
+}
+
+/* Solo aplicar hover en dispositivos que soportan hover (evita activar en touch) */
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    z-index: 2;
+  }
+}
+
+
+
+/* Formulario */
+.form-container {
+  max-width: 500px;
+  min-width: 280px;
+  width: 75%;
+  margin: 0 auto;
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import ProductCard from './ProductCard';
 
-const ProductList = ({ category = null }) => 
+const ProductList = ({ category = null, descuento = 0 }) => 
     {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -36,7 +36,7 @@ const ProductList = ({ category = null }) =>
 
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Cargando...</div>;
   }  
 
   
@@ -44,7 +44,11 @@ const ProductList = ({ category = null }) =>
     <Row>
       {products.map((product) => (
         <Col md={3} key={product.id} className="mb-4">
-          <ProductCard product={product} agregarAlCarrito={handleAgregarAlCarrito} />
+          <ProductCard 
+          product={product} 
+          agregarAlCarrito={handleAgregarAlCarrito} 
+          descuento={descuento}
+          />
         </Col>
       ))}
     </Row>
