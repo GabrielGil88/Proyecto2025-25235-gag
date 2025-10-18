@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-
-const estadoInicial = {
-    nombre: '',
-    email: '',
-    mensaje: '',
-    suscribir: false,
-};
+import Swal from 'sweetalert2';
 
 export default function ContactForm({ onSubmit }) {
+
+    const estadoInicial = {
+        nombre: '',
+        email: '',
+        mensaje: '',
+        suscribir: false,
+    };
+
     const [form, setForm] = useState(estadoInicial);
     const [errors, setErrors] = useState({});
 
-    // manejador genérico para inputs controlados
+    //Manejador genérico para inputs controlados
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setForm((prev) => ({
@@ -20,7 +22,7 @@ export default function ContactForm({ onSubmit }) {
         }));
     };
 
-    // validación mínima
+    // Validación mínima de errores
     const validate = () => {
         const err = {};
         if (!form.nombre.trim()) err.nombre = 'El nombre es obligatorio';
@@ -32,20 +34,29 @@ export default function ContactForm({ onSubmit }) {
         return err;
     };
 
+    //Prevent default manejador de envío de formulario
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Validar si hay errores
         const err = validate();
         setErrors(err);
         if (Object.keys(err).length > 0) return;
 
-        // aquí podés enviar a una API, mostrar un toast, etc.
-        // si recibiste prop onSubmit, la llamás; sino, console.log
+        // Aquí se podría enviar el formulario
         if (typeof onSubmit === 'function') {
             onSubmit(form);
         } else {
             console.log('Enviar formulario:', form);
-            alert('Formulario enviado (simulación). Revisa la consola.');
         }
+
+        // Mostrar alerta de éxito con sweetalert2
+        Swal.fire({
+            icon: 'success',
+            title: 'Formulario enviado correctamente',
+            showConfirmButton: false,
+            timer: 2200
+        });
 
         //Limpiar formulario
         setForm(estadoInicial);
@@ -59,7 +70,7 @@ export default function ContactForm({ onSubmit }) {
                     id="nombre"
                     name="nombre"
                     type="text"
-                    className={`form-control ${errors.nombre ? 'is-invalid' : ''}`} // Estilo si hay error
+                    className={`form-control ${errors.nombre ? 'is-invalid' : ''}`} // Estilos si hay error
                     value={form.nombre}
                     onChange={handleChange}
                 />
@@ -72,7 +83,7 @@ export default function ContactForm({ onSubmit }) {
                     id="email"
                     name="email"
                     type="email"
-                    className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                    className={`form-control ${errors.email ? 'is-invalid' : ''}`} // Estilos si hay error
                     value={form.email}
                     onChange={handleChange}
                 />
@@ -91,7 +102,7 @@ export default function ContactForm({ onSubmit }) {
                 />
             </div>
 
-            <div className="form-check mb-3">
+            <div className="form-check my-4">
                 <input
                     id="suscribir"
                     name="suscribir"
@@ -106,14 +117,13 @@ export default function ContactForm({ onSubmit }) {
             </div>
 
             <div className="d-flex gap-2">
-                <button type="submit" className="btn btn-primary">Enviar</button>
                 <button
                     type="button"
                     className="btn btn-outline-secondary"
-                    onClick={() => { setForm(estadoInicial); setErrors({}); }}
-                >
+                    onClick={() => { setForm(estadoInicial); setErrors({}); }}>
                     Limpiar
                 </button>
+                <button type="submit" className="btn btn-primary w-100">Enviar</button>
             </div>
         </form>
     );
