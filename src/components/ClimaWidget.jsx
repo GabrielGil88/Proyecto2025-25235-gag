@@ -6,13 +6,14 @@ const ClimaWidget = () => {
 
     useEffect(() => {
         const results = [];
-        
+
         const cities = [
             { name: "Buenos Aires", lat: -34.61, lon: -58.38 },
             { name: "La Plata", lat: -34.92, lon: -57.95 },
             { name: "Rosario", lat: -32.95, lon: -60.65 },
             { name: "Córdoba", lat: -31.42, lon: -64.18 },
             { name: "Bariloche", lat: -41.13, lon: -71.31 },
+            { name: "Islas Malvinas", lat: -51.7, lon: -59.0 },
         ];
 
 
