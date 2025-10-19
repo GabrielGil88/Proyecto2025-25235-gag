@@ -1,0 +1,47 @@
+:root{
+  --banner-height: 56px;
+  --duration: 20s; /* ajustá la velocidad */
+}
+
+.clima-banner{
+  width: 100%;
+  height: var(--banner-height);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 4px 0px;
+  box-sizing: border-box;
+  background: transparent;
+
+}
+
+
+.clima-track{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  animation: marquee var(--duration) linear infinite;
+  will-change: transform;
+}
+
+
+.clima-card{
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 10px;
+  background: #ffffff;
+  border-radius: 8px;
+  min-width: 140px;
+  white-space: nowrap;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.03);
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+}
+
+/* animación suave e infinita */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

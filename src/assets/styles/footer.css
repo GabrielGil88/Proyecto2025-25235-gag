@@ -1,0 +1,77 @@
+footer {
+    background: #ffffff;
+    color: #333333;
+    padding: 2.5rem 0 2rem 0;
+    font-size: 0.95rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ==== Texto general ==== */
+footer p {
+    margin: 0.3rem 0;
+    color: #333333;
+    line-height: 1.5;
+}
+
+/* ==== Contacto ==== */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-info p svg {
+    color: #e6c325;
+}
+
+/* ==== Redes sociales ==== */
+.social-icons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: #333333;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: #e6c325;
+    transform: translateY(-2px);
+}
+
+/* ==== Línea inferior ==== */
+footer::after {
+    content: "© 2025 Fast Shop - Todos los derechos reservados";
+    display: block;
+    margin-top: 1.8rem;
+    font-size: 0.85rem;
+    color: #333333;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+    footer {
+        padding: 2rem 1rem;
+    }
+
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+
+    .social-icons {
+        gap: 1rem;
+    }
+
+    .social-icons a svg {
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    footer::after {
+        margin-top: 1.2rem;
+    }
+}

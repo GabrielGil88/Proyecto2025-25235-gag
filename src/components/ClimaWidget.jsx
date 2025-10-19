@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../assets/styles/climaWidget.css";
 
 const ClimaWidget = () => {
     const [weatherData, setWeatherData] = useState([]);
@@ -12,7 +13,11 @@ const ClimaWidget = () => {
             { name: "La Plata", lat: -34.92, lon: -57.95 },
             { name: "Rosario", lat: -32.95, lon: -60.65 },
             { name: "Córdoba", lat: -31.42, lon: -64.18 },
+            { name: "Mendoza", lat: -32.89, lon: -68.83 },
+            { name: "Santa Fe", lat: -31.63, lon: -60.7 },
+            { name: "Salta", lat: -24.79, lon: -65.41 },
             { name: "Bariloche", lat: -41.13, lon: -71.31 },
+            { name: "Ushuaia", lat: -54.8, lon: -68.3 },
             { name: "Islas Malvinas", lat: -51.7, lon: -59.0 },
         ];
 
@@ -39,7 +44,7 @@ const ClimaWidget = () => {
         });
     }, []);
 
-    const weatherIcons = {
+    const climaIcons = {
         0: "☀️",
         1: "🌤️",
         2: "⛅",
@@ -52,23 +57,22 @@ const ClimaWidget = () => {
         95: "⛈️",
     };
 
-    if (loading) return <p>Cargando clima...</p>;
+    if (loading) return <p className="clima-loading">Cargando clima...</p>;
+
+    // duplicamos la lista para el scroll continuo
+    const loopData = [...weatherData, ...weatherData];
 
     return (
-        <div className="d-flex flex-wrap gap-3">
-            {weatherData.map((city) => (
-                <div
-                    key={city.name}
-                    className="card text-center p-3 shadow-sm"
-                    style={{ minWidth: "120px" }}
-                >
-                    <h6>{city.name}</h6>
-                    <div style={{ fontSize: "2rem" }}>
-                        {weatherIcons[city.weathercode] || "🌡️"}
+        <div className="clima-banner" role="region" aria-label="Resumen del clima">
+            <div className="clima-track" tabIndex={0}>
+                {loopData.map((city, idx) => (
+                    <div key={`${city.name}-${idx}`} className="clima-card">
+                        <b>{city.name}</b>
+                        <span>{climaIcons[city.weathercode] || "🌡️"}</span>
+                        <span>{city.temperature}°C</span>
                     </div>
-                    <p>{city.temperature}°C</p>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     );
 };

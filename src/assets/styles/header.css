@@ -1,0 +1,140 @@
+/* ==== NAVBAR ==== */
+.navbar {
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    padding: 0.8rem 1.5rem;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* ==== LOGO Y FRASE ==== */
+.navbar-brand {
+    gap: 0.75rem;
+}
+
+.brand-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: inline-block;
+}
+
+/* texto pequeño junto al logo */
+.navbar-brand span {
+    padding-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+    white-space: nowrap;
+}
+
+/* ==== LINKS ==== */
+.nav-link {
+    color: #333333;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #333;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #111111;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ==== BOTÓN DE SESIÓN ==== */
+.navbar .btn {
+    border-radius: 50px;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #333;
+    background: transparent;
+    color: #333;
+}
+
+.navbar .btn:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* ==== CARRITO ==== */
+.cart-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    /* color que queremos que herede el svg */
+    text-decoration: none;
+    transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.cart-link svg,
+.cart-link .svg-inline--fa {
+    width: 1.3em;
+    height: 1.3em;
+    color: inherit;
+    /* usa currentColor del parent */
+    transition: transform 0.18s ease, color 0.18s ease;
+}
+
+.cart-link:hover,
+.cart-link:focus {
+    color: #e6c325;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.cart-link:hover svg,
+.cart-link:focus svg {
+    transform: scale(1.08);
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 992px) {
+    .brand-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .navbar-brand span {
+        display: none;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 0.5rem 0;
+    }
+
+    .navbar .btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+        margin: 0 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .cart-link svg,
+    .cart-link .svg-inline--fa {
+        width: 1.1em;
+        height: 1.1em;
+    }
+}

@@ -4,9 +4,11 @@ import ClimaWidget from '../components/ClimaWidget';
 
 const Home = () => {
   return (
-    <div className="container">
+    <div>
       <ClimaWidget />
-      <h1 className="">Web de incio</h1>
+      <div className="container">
+        <h2 className="">Web de incio</h2>
+      </div>
     </div>
   );
 };
