@@ -12,6 +12,23 @@ h2, h3, h4, h5, h6 {
   padding: 2vh 0;
 }
 
+/* Botón */
+.btn-primario {
+    border-radius: 50px;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #333;
+    background: transparent;
+    color: #333;
+}
+
+.btn-primario:hover {
+    background: #333;
+    color: #fff;
+    border: 2px solid #333;
+}
 
 /* ProductCard */
 .product-card {
@@ -39,3 +56,21 @@ h2, h3, h4, h5, h6 {
   width: 75%;
   margin: 0 auto;
 }
+
+
+/* Carrusel */
+.carrusel .carousel-item {
+  height: 60vh; /* 60% de la altura de la ventana */
+}
+
+.carrusel .carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .carrusel .carousel-item {
+    height: 70vh;}
+  }

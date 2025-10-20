@@ -56,10 +56,8 @@ const ProductCard = ({ product, agregarAlCarrito, descuento = 0 }) => {
                         </Card.Text>
                     )}
 
-                    <Button
-                        variant="primary"
-                        size="sm"
-                        className="px-3 fw-semibold"
+                    <Button                        
+                        className="btn-primario px-4 fw-semibold"
                         onClick={() => agregarAlCarrito(product)}
                     >
                         Agregar

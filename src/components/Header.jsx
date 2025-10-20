@@ -30,7 +30,7 @@ const Header = () => {
                             <Link to="/carrito" className="cart-link me-3" aria-label="Carrito">
                                 <FontAwesomeIcon icon={faShoppingCart} size="lg" />
                             </Link>
-                            <Button as={Link} to="/administracion">
+                            <Button className="btn-primario" as={Link} to="/administracion">
                                 Iniciar sesión
                             </Button>
                         </div>

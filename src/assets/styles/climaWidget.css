@@ -9,10 +9,9 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 4px 0px;
+  padding: 2rem 0;
   box-sizing: border-box;
-  background: transparent;
-
+  background: #FEE600;
 }
 
 

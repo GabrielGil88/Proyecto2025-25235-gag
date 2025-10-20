@@ -58,22 +58,7 @@
     width: 100%;
 }
 
-/* ==== BOTÓN DE SESIÓN ==== */
-.navbar .btn {
-    border-radius: 50px;
-    font-weight: 500;
-    padding: 0.5rem 1.2rem;
-    margin: 0 1rem;
-    transition: all 0.3s ease;
-    border: 2px solid #333;
-    background: transparent;
-    color: #333;
-}
 
-.navbar .btn:hover {
-    background: #333;
-    color: #fff;
-}
 
 /* ==== CARRITO ==== */
 .cart-link {
