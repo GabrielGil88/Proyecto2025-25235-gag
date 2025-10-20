@@ -1,5 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const ProductCard = ({ product, agregarAlCarrito, descuento = 0 }) => {
 
@@ -57,9 +59,10 @@ const ProductCard = ({ product, agregarAlCarrito, descuento = 0 }) => {
                     )}
 
                     <Button                        
-                        className="btn-primario px-4 fw-semibold"
+                        className="btn-primario px-4 ms-4 d-flex align-items-center justify-content-center gap-2"
                         onClick={() => agregarAlCarrito(product)}
                     >
+                        <FontAwesomeIcon icon={faShoppingCart} />
                         Agregar
                     </Button>
                 </div>

@@ -1,14 +1,15 @@
 import React from 'react';
 import ProductList from '../components/ProductList';
+import { Container } from 'react-bootstrap';
 
 const Ofertas = () => {
   return (
-    <div className="container">
+    <Container className="my-5 gap-5 d-flex flex-column">
       <h2>Ofertas en ropa de hombre</h2>
       <ProductList category="men's clothing" descuento={10} />
       <h2>Ofertas en ropa de mujer</h2>
       <ProductList category="women's clothing" descuento={25} />
-    </div>
+    </Container>
   );
 };
 

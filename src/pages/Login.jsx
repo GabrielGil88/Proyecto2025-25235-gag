@@ -8,9 +8,9 @@ const Login = () => {
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center min-vh-100">
+    <Container className="d-flex justify-content-center align-items-center my-5">
       <Row className="w-100 justify-content-center">
-        <Col md={4} lg={4}>
+        <Col md={8} lg={6} xl={4}>
           <Card className="shadow-lg border-0 rounded-4 p-3">
             <Card.Body>
               <h2 className="text-center mb-4">Iniciar Sesión</h2>
@@ -24,7 +24,7 @@ const Login = () => {
                   <Form.Label>Contraseña</Form.Label>
                   <Form.Control type="password" placeholder="Ingrese su contraseña" required />
                 </Form.Group>
-                <Button variant="primary" type="submit" className="w-100 my-3">
+                <Button className="btn-primario w-100 my-3">
                   Ingresar
                 </Button>
               </Form>

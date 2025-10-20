@@ -1,10 +1,12 @@
 import React from 'react';
+import {Container} from 'react-bootstrap';
+
 
 const Carrito = () => {
     return (
-        <div className="container">
+        <Container>
             <h2>Carrito</h2>
-        </div>
+        </Container>
     );
 };
 

@@ -1,33 +1,55 @@
 body {
-  background-color: #f3f3f3; /* Ejemplo: gris claro estilo Bootstrap */
+  background-color: #f3f3f3;
+  /* Ejemplo: gris claro estilo Bootstrap */
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
 
 /* Subtitulos */
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: #333333;
   padding: 2vh 0;
 }
 
-/* Botón */
+/* Botones */
 .btn-primario {
-    border-radius: 50px;
-    font-weight: 500;
-    padding: 0.5rem 1.2rem;
-    margin: 0 1rem;
-    transition: all 0.3s ease;
-    border: 2px solid #333;
-    background: transparent;
-    color: #333;
+  background-color: #FEE600;
+  color: #333;
+  border: 2px solid #ecd504;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.6rem 1.4rem;
+  letter-spacing: 0.3px;
 }
 
 .btn-primario:hover {
-    background: #333;
-    color: #fff;
-    border: 2px solid #333;
+  background-color: #c0a01e;
+  border-color: #c0a01e;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: #333;
+  border: 2px solid #333;
+  border-radius: 50px;
+  font-weight: 500;
+  padding: 0.6rem 1.4rem;
+}
+
+.btn-secundario:hover {
+  background-color: #333;
+  border-color: #333333;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* ProductCard */
@@ -35,7 +57,7 @@ h2, h3, h4, h5, h6 {
   transition: transform 200ms ease, box-shadow 200ms ease;
   will-change: transform;
   transform-origin: center;
-  position: relative; 
+  position: relative;
 }
 
 /* Solo aplicar hover en dispositivos que soportan hover (evita activar en touch) */
@@ -60,7 +82,8 @@ h2, h3, h4, h5, h6 {
 
 /* Carrusel */
 .carrusel .carousel-item {
-  height: 60vh; /* 60% de la altura de la ventana */
+  height: 60vh;
+  /* 60% de la altura de la ventana */
 }
 
 .carrusel .carousel-item img {
@@ -72,5 +95,6 @@ h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   .carrusel .carousel-item {
-    height: 70vh;}
+    height: 70vh;
   }
+}

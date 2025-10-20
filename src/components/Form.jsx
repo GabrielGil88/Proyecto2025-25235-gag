@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
 export default function ContactForm({ onSubmit }) {
@@ -117,13 +118,17 @@ export default function ContactForm({ onSubmit }) {
             </div>
 
             <div className="d-flex gap-2">
-                <button
+                <Button
                     type="button"
-                    className="btn btn-outline-secondary"
-                    onClick={() => { setForm(estadoInicial); setErrors({}); }}>
+                    className="btn-secundario"
+                    onClick={() => { setForm(estadoInicial); setErrors({}); }}
+                    aria-label="Limpiar formulario"
+                >
                     Limpiar
-                </button>
-                <button type="submit" className="btn btn-primary w-100">Enviar</button>
+                </Button>
+                <Button type="submit" className="btn-primario w-100" aria-label="Enviar formulario">
+                    Enviar
+                </Button>
             </div>
         </form>
     );
