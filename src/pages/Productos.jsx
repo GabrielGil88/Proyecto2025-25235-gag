@@ -4,7 +4,7 @@ import {Container} from 'react-bootstrap';
 
 const Productos = () => {
   return (
-    <Container className="my-5 gap-5 d-flex flex-column">
+    <Container className="seccion">
       <h2>Todos los productos</h2>
       <ProductList />
     </Container>

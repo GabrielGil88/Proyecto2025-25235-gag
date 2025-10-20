@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 
 const Ofertas = () => {
   return (
-    <Container className="my-5 gap-5 d-flex flex-column">
+    <Container className="seccion">
       <h2>Ofertas en ropa de hombre</h2>
       <ProductList category="men's clothing" descuento={10} />
       <h2>Ofertas en ropa de mujer</h2>

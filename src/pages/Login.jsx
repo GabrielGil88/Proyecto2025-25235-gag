@@ -8,7 +8,7 @@ const Login = () => {
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center my-5">
+    <Container className="seccion">
       <Row className="w-100 justify-content-center">
         <Col md={8} lg={6} xl={4}>
           <Card className="shadow-lg border-0 rounded-4 p-3">

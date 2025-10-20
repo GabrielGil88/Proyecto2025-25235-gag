@@ -14,21 +14,21 @@ const ProductCard = ({ product, agregarAlCarrito, descuento = 0 }) => {
     : precio;
 
     return (
-        <Card className="product-card h-100 shadow-sm border-0 rounded-4 overflow-hidden d-flex flex-column"
+        <Card className="product-card border-0 rounded-4 overflow-hidden d-flex flex-column"
             tabIndex="0">
             <Card.Img
                 variant="top"
                 src={product.image}
                 alt={product.title}
-                className="img-fluid"
-                style={{ height: '300px', objectFit: 'scale-down' }}
+                className="img-fluid p-3"
+                style={{ maxHeight: '200px', objectFit: 'contain', width: '100%'  }}
             />
 
-            <Card.Body className="d-flex flex-column justify-content-between p-3">
+            <Card.Body className="d-flex flex-column justify-content-between">
                 <div>
                     <div className="d-flex align-items-center mb-2">
                         {tieneDescuento && (
-                            <span className="badge bg-danger me-2">
+                            <span className="badge bg-success me-2">
                                 -{descuento}% OFF
                             </span>
                         )}

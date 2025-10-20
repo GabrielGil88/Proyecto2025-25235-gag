@@ -1,8 +1,18 @@
 body {
   background-color: #f3f3f3;
-  /* Ejemplo: gris claro estilo Bootstrap */
   margin: 0;
   font-family: 'Roboto', sans-serif;
+}
+
+
+/* Seccion */
+.seccion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  min-height: 70vh;
+  padding: 4rem 1rem;
 }
 
 /* Subtitulos */
@@ -15,6 +25,7 @@ h6 {
   font-weight: 700;
   color: #333333;
   padding: 2vh 0;
+  text-align: center;
 }
 
 /* Botones */
@@ -54,20 +65,23 @@ h6 {
 
 /* ProductCard */
 .product-card {
+  width: 100%;
+  background-color: #ffffff;
   transition: transform 200ms ease, box-shadow 200ms ease;
   will-change: transform;
   transform-origin: center;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Solo aplicar hover en dispositivos que soportan hover (evita activar en touch) */
 @media (hover: hover) and (pointer: fine) {
   .product-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-    z-index: 2;
+    transform: scale(1.04);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   }
 }
+
+
 
 
 

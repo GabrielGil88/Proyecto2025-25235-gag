@@ -1,6 +1,6 @@
 import React from 'react';
 import ContactForm from '../components/Form';
-import { Button, Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const Contacto = () => {
   const handleForm = (data) => {
@@ -8,7 +8,7 @@ const Contacto = () => {
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center my-5">
+    <Container className="seccion">
       <Row className="w-100 justify-content-center">
         <Col md={8} lg={8} xl={6}>
           <Card className="shadow-lg border-0 rounded-4">
