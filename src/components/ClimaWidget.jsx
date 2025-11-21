@@ -28,6 +28,7 @@ const ClimaWidget = () => {
             )
                 .then((res) => res.json())
                 .then((data) => {
+                    console.log(city.name, data.current_weather);
                     results.push({
                         name: city.name,
                         temperature: data.current_weather.temperature,
@@ -45,16 +46,19 @@ const ClimaWidget = () => {
     }, []);
 
     const climaIcons = {
-        0: "☀️",
-        1: "🌤️",
-        2: "⛅",
-        3: "☁️",
-        45: "🌫️",
-        48: "🌫️",
-        51: "🌦️",
-        61: "🌧️",
-        71: "❄️",
-        95: "⛈️",
+        0: "☀️",      // despejado
+        1: "🌤️",     // mayormente soleado
+        2: "⛅",      // parcialmente nublado
+        3: "☁️",      // nublado
+        45: "🌫️",     // niebla
+        48: "🌫️",     // niebla
+        51: "🌦️",     // llovizna ligera
+        61: "🌧️",     // lluvia
+        71: "❄️",      // nieve
+        80: "🌦️",     // chubascos ligeros
+        81: "🌦️",     // chubascos moderados
+        82: "🌧️",     // chubascos fuertes/violentos
+        95: "⛈️",      // tormenta
     };
 
     if (loading) return <p className="clima-loading">Cargando clima...</p>;

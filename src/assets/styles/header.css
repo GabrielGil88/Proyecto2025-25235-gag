@@ -1,7 +1,7 @@
 /* ==== NAVBAR ==== */
 .navbar {
-    background: #ffffff;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    background: var(--color-card-bg);
+    box-shadow: 0 4px 14px var(--color-shadow);
     padding: 0.8rem 1.5rem;
     transition: background 0.3s ease, box-shadow 0.3s ease;
     position: sticky;
@@ -26,13 +26,13 @@
     padding-top: 1.5rem;
     font-size: 1rem;
     font-weight: 400;
-    color: #666;
+    color: var(--color-primary-dark);
     white-space: nowrap;
 }
 
 /* ==== LINKS ==== */
 .nav-link {
-    color: #333333;
+    color: var(--color-text);
     font-weight: 500;
     font-size: 1rem;
     position: relative;
@@ -46,12 +46,12 @@
     left: 0;
     width: 0%;
     height: 2px;
-    background: #333;
+    background: var(--color-primary);
     transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #111111;
+    color: var(--color-primary-dark);
 }
 
 .nav-link:hover::after {
@@ -65,7 +65,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #333333;
+    color: var(--color-text);
     /* color que queremos que herede el svg */
     text-decoration: none;
     transition: color 0.18s ease, transform 0.18s ease;
@@ -82,7 +82,7 @@
 
 .cart-link:hover,
 .cart-link:focus {
-    color: #e6c325;
+    color: var(--color-primary);
     transform: translateY(-2px);
     text-decoration: none;
 }

@@ -1,30 +1,30 @@
 footer {
-    background: #ffffff;
-    color: #333333;
+    background: var(--color-card-bg);
+    color: var(--color-text);
     padding: 2.5rem 0 2rem 0;
     font-size: 0.95rem;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 2px 0 10px 2px var(--color-shadow);
 }
 
 /* ==== Texto general ==== */
 footer p {
     margin: 0.3rem 0;
-    color: #333333;
+    color: var(--color-text);
     line-height: 1.5;
 }
 
 /* ==== Contacto ==== */
-.contact-info p{
+.contact-info p {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    margin: 1rem 0;    
+    margin: 1rem 0;
 }
 
 .contact-info svg {
-    color: #e6c325;
+    color: var(--color-primary);
 }
 
 /* ==== Redes sociales ==== */
@@ -37,12 +37,12 @@ footer p {
 }
 
 .social-icons a {
-    color: #333333;
+    color: var(--color-text);
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .social-icons a:hover {
-    color: #e6c325;
+    color: var(--color-primary);
     transform: translateY(-2px);
 }
 
@@ -52,7 +52,7 @@ footer::after {
     display: block;
     margin-top: 1.8rem;
     font-size: 0.85rem;
-    color: #333333;
+    color: var(--color-text);
 }
 
 /* ==== Responsive ==== */

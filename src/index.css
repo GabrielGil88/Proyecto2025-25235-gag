@@ -1,7 +1,7 @@
 body {
-  background-color: #f3f3f3;
+  background-color: var(--color-background);
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-family);
 }
 
 
@@ -21,18 +21,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: #333333;
+  color: var(--color-text);
   padding: 2vh 0;
   text-align: center;
 }
 
 /* Botones */
 .btn-primario {
-  background-color: #FEE600;
-  color: #333;
-  border: 2px solid #ecd504;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-primary);
   border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -41,48 +40,45 @@ h6 {
 }
 
 .btn-primario:hover {
-  background-color: #c0a01e;
-  border-color: #c0a01e;
-  color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-primary);
+  box-shadow: 0 4px 10px var(--color-shadow);
 }
 
 .btn-secundario {
   background-color: transparent;
-  color: #333;
-  border: 2px solid #333;
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
   border-radius: 50px;
-  font-weight: 500;
+  font-weight: 600;
   padding: 0.6rem 1.4rem;
 }
 
 .btn-secundario:hover {
-  background-color: #333;
-  border-color: #333333;
-  color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-text-light);
+  box-shadow: 0 4px 10px var(--color-shadow);
 }
 
 /* ProductCard */
 .product-card {
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--color-card-bg);
   transition: transform 200ms ease, box-shadow 200ms ease;
   will-change: transform;
   transform-origin: center;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--color-shadow);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .product-card:hover {
     transform: scale(1.04);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 16px var(--color-shadow-dark);
   }
 }
-
-
-
 
 
 /* Formulario */

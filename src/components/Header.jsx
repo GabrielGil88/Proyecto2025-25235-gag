@@ -13,7 +13,7 @@ const Header = () => {
                 {/* Logo y frase */}
                 <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
                     <img src={logo} alt="Logo" className="brand-logo" />
-                    <span>Los productos que queres al alcance de un <b style={{ color: '#e6c325ff' }}>click</b></span>
+                    <span>Los productos que queres al alcance de un <b style={{ color: 'var(--color-primary)ff' }}>click</b></span>
                 </Navbar.Brand>
 
                 {/* Botón hamburguesa */}
