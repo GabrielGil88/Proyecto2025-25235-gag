@@ -26,13 +26,13 @@ const Header = () => {
                         <Nav.Link as={Link} to="/productos" className="me-3">Productos</Nav.Link>
                         <Nav.Link as={Link} to="/contacto" className="me-3">Contacto</Nav.Link>
 
-                        <div className="d-flex align-items-center">
+                        <div className="d-flex align-items-center gap-4">
+                            <Button className="btn-secundario" as={Link} to="/administracion">
+                                Administracion
+                            </Button>
                             <Link to="/carrito" className="cart-link me-3" aria-label="Carrito">
                                 <FontAwesomeIcon icon={faShoppingCart} size="lg" />
                             </Link>
-                            <Button className="btn-secundario" as={Link} to="/administracion">
-                                Iniciar sesión
-                            </Button>
                         </div>
                     </Nav>
                 </Navbar.Collapse>
