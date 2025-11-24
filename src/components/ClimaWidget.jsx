@@ -28,7 +28,6 @@ const ClimaWidget = () => {
             )
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(city.name, data.current_weather);
                     results.push({
                         name: city.name,
                         temperature: data.current_weather.temperature,
@@ -41,7 +40,7 @@ const ClimaWidget = () => {
                         setLoading(false);
                     }
                 })
-                .catch((err) => console.error("Error al obtener el clima:", err));
+                .catch((error) => console.error("Error al obtener el clima:", error));
         });
     }, []);
 
