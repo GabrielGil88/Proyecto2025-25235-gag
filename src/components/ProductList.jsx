@@ -8,7 +8,7 @@ const ProductList = ({ category = null, descuento = 0, limit = null }) => {
 
 
   useEffect(() => {
-    let url = 'https://fakestoreapi.com/products';
+    let url = 'https://6924d4c582b59600d72184e2.mockapi.io/Products';
     if (category) {
       url = `https://fakestoreapi.com/products/category/${category}`;
     }

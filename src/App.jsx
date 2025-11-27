@@ -4,6 +4,7 @@ import ScrollToTop from './components/ScrollTotop';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Carrito from './pages/Carrito';
+import CrudProductos from './components/CrudProductos';
 import Productos from './pages/Productos';
 import Ofertas from './pages/Ofertas';
 import Contacto from './pages/Contacto';
@@ -14,11 +15,12 @@ function App() {
 
   return (
     <Router>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/administracion" element={<Login />} />
-        <Route path="/carrito" element={<Carrito/>} />
+        <Route path="/carrito" element={<Carrito />} />
+        <Route path="/crud" element={<CrudProductos />} />
         <Route path="/" element={<Home />} />
         <Route path="/productos" element={<Productos />} />
         <Route path="/ofertas" element={<Ofertas />} />
