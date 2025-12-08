@@ -9,6 +9,7 @@ const CrudProductos = () => {
     const [form, setForm] = useState({
         id: "",
         title: "",
+        category: "",
         description: "",
         price: "",
         discount: "",
@@ -29,7 +30,7 @@ const CrudProductos = () => {
     // cierro el modal
     const handleClose = () => {
         setShow(false);
-        setForm({ id: "", title: "", description: "", price: "", discount: "", stock: "", image: "" });
+        setForm({ id: "", title: "", category: "", description: "", price: "", discount: "", stock: "", image: "" });
         setEditId(null);
     };
 
@@ -109,9 +110,10 @@ const CrudProductos = () => {
                     <tr>
                         <th>ID</th>
                         <th>Título</th>
+                        <th>Categoría</th>
                         <th>Descripción</th>
                         <th>Precio</th>
-                        <th style={{width:"120px"}}>Descuento %</th>
+                        <th style={{ width: "120px" }}>Descuento %</th>
                         <th>Stock</th>
                         <th>Imagen</th>
                         <th>Acciones</th>
@@ -122,10 +124,11 @@ const CrudProductos = () => {
                         <tr key={prod.id}>
                             <td>{prod.id}</td>
                             <td>{prod.title}</td>
+                            <td>{prod.category}</td>
                             <td>{prod.description}</td>
                             <td>${Number(prod.price).toFixed(2)}</td>
-                            <td>{prod.stock}</td>
                             <td>{prod.discount}</td>
+                            <td>{prod.stock}</td>
                             <td>
                                 {prod.image?.startsWith("http") ? (
                                     <img
@@ -172,6 +175,17 @@ const CrudProductos = () => {
                             <Form.Control
                                 value={form.title}
                                 onChange={(e) => setForm({ ...form, title: e.target.value })}
+                                placeholder="Nombre del producto"
+                                required
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-2">
+                            <Form.Label>Categoría</Form.Label>
+                            <Form.Control
+                                value={form.category}
+                                onChange={(e) => setForm({ ...form, category: e.target.value })}
+                                placeholder="Ej: ropa, electronica, hogar"
                                 required
                             />
                         </Form.Group>
@@ -181,8 +195,8 @@ const CrudProductos = () => {
                             <Form.Control
                                 value={form.description}
                                 onChange={(e) =>
-                                    setForm({ ...form, description: e.target.value })
-                                }
+                                    setForm({ ...form, description: e.target.value })}
+                                    placeholder="Descripción del producto"
                                 required
                             />
                         </Form.Group>
@@ -193,20 +207,20 @@ const CrudProductos = () => {
                                 type="number"
                                 value={form.price}
                                 onChange={(e) =>
-                                    setForm({ ...form, price: Number(e.target.value) })
-                                }
+                                    setForm({ ...form, price: Number(e.target.value) })}
+                                    placeholder="$"
                                 required
                             />
                         </Form.Group>
 
                         <Form.Group className="mb-2">
-                            <Form.Label>Descuento</Form.Label>
+                            <Form.Label>Descuento %</Form.Label>
                             <Form.Control
                                 type="number"
                                 value={form.discount}
                                 onChange={(e) =>
-                                    setForm({ ...form, discount: Number(e.target.value) })
-                                }
+                                    setForm({ ...form, discount: Number(e.target.value) })}
+                                    placeholder="Ej: 10"
                                 required
                             />
                         </Form.Group>
@@ -217,8 +231,8 @@ const CrudProductos = () => {
                                 type="number"
                                 value={form.stock}
                                 onChange={(e) =>
-                                    setForm({ ...form, stock: Number(e.target.value) })
-                                }
+                                    setForm({ ...form, stock: Number(e.target.value) })}
+                                    placeholder="Cantidad disponible"
                                 required
                             />
                         </Form.Group>
@@ -228,6 +242,7 @@ const CrudProductos = () => {
                             <Form.Control
                                 value={form.image}
                                 onChange={(e) => setForm({ ...form, image: e.target.value })}
+                                placeholder="URL de la imagen"
                                 required
                             />
                         </Form.Group>

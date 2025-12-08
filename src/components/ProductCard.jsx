@@ -2,26 +2,45 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { useContext } from "react";
+import { CartContext } from './CartContext';
 
-const ProductCard = ({ product, agregarAlCarrito, descuento = 0 }) => {
 
-  const descuentoInt = Number(descuento) || 0; 
-  const tieneDescuento = descuentoInt > 0;
+const ProductCard = ({ product, descuento = 0 }) => {
+    const { addCart } = useContext(CartContext);
 
-  const precio = Number(product.price) || 0;
-  const precioConDescuento = tieneDescuento
-    ? Number((precio * (1 - descuentoInt / 100)).toFixed(2))
-    : precio;
+    const precio = Number(product.price) || 0;
+
+    const productDiscount = Number(product.discount || 0);
+    const descuentoInt = productDiscount > 0 ? productDiscount : (Number(descuento) || 0);
+
+    const descuentoSeguro = Math.min(Math.max(descuentoInt, 0), 100);
+
+    const tieneDescuento = descuentoSeguro > 0;
+
+    const precioConDescuento = tieneDescuento
+        ? Number((precio * (1 - descuentoSeguro / 100)).toFixed(2))
+        : precio;
+
+    const descripcionCorta = (product.description || '').slice(0, 100);
+
+    const title = product.title || 'Producto sin título';
+
+    const stock = product.stock;
+    const sinStock = stock === 0; // solo es "sin stock" cuando stock === 0
+
+
 
     return (
         <Card className="product-card border-0 rounded-4 overflow-hidden d-flex flex-column"
-            tabIndex="0">
+            tabIndex="0"
+            aria-label={title}>
             <Card.Img
                 variant="top"
                 src={product.image}
-                alt={product.title}
+                alt={title}
                 className="img-fluid p-3"
-                style={{ maxHeight: '200px', objectFit: 'contain', width: '100%'  }}
+                style={{ maxHeight: '200px', objectFit: 'contain', width: '100%' }}
             />
 
             <Card.Body className="d-flex flex-column justify-content-between">
@@ -29,16 +48,16 @@ const ProductCard = ({ product, agregarAlCarrito, descuento = 0 }) => {
                     <div className="d-flex align-items-center mb-2">
                         {tieneDescuento && (
                             <span className="badge bg-success me-2">
-                                -{descuento}% OFF
+                                -{descuentoSeguro}% OFF
                             </span>
                         )}
                         <Card.Title className="fw-semibold text-dark mb-0 text-truncate">
-                            {product.title}
+                            {title}
                         </Card.Title>
                     </div>
 
                     <Card.Text className="text-muted small mb-3">
-                        {product.description.slice(0, 100)}...
+                        {descripcionCorta}{descripcionCorta.length >= 100 ? '...' : ''}
                     </Card.Text>
                 </div>
 
@@ -58,13 +77,18 @@ const ProductCard = ({ product, agregarAlCarrito, descuento = 0 }) => {
                         </Card.Text>
                     )}
 
-                    <Button                        
-                        className="btn-primario px-4 ms-4 d-flex align-items-center justify-content-center gap-2"
-                        onClick={() => agregarAlCarrito(product)}
-                    >
-                        <FontAwesomeIcon icon={faShoppingCart} />
-                        Agregar
-                    </Button>
+                    {sinStock ? (
+                        <span className="text-danger fw-bold ms-4">Sin stock</span>
+                    ) : (
+                        <Button
+                            className="btn-primario px-4 ms-4 d-flex align-items-center justify-content-center gap-2"
+                            onClick={() => addCart(product)}
+                        >
+                            <FontAwesomeIcon icon={faShoppingCart} />
+                            Agregar
+                        </Button>
+                    )}
+
                 </div>
             </Card.Body>
         </Card>

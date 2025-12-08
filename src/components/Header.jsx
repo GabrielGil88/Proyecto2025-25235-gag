@@ -30,7 +30,7 @@ const Header = () => {
                             <Button className="btn-secundario" as={Link} to="/administracion">
                                 Administracion
                             </Button>
-                            <Link to="/carrito" className="cart-link me-3" aria-label="Carrito">
+                            <Link to="/cart" className="cart-link me-3" aria-label="Carrito">
                                 <FontAwesomeIcon icon={faShoppingCart} size="lg" />
                             </Link>
                         </div>
