@@ -11,6 +11,7 @@ import Contacto from './pages/Contacto';
 import Login from './pages/Login';
 import Footer from './components/Footer'
 import { CartProvider } from './components/CartProvider';
+import RutaProtegida from './components/RutaProtegida';
 
 function App() {
 
@@ -20,9 +21,9 @@ function App() {
       <ScrollToTop />
       <Header />
       <Routes>
-        <Route path="/administracion" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart/>} />
-        <Route path="/crud" element={<CrudProductos />} />
+        <Route path="/crud" element={<RutaProtegida><CrudProductos /></RutaProtegida> }/>
         <Route path="/" element={<Home />} />
         <Route path="/productos" element={<Productos />} />
         <Route path="/ofertas" element={<Ofertas />} />

@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Row, Col, Card } from 'react-bootstrap';
 
-const Login = () => {
+export default function Login () {
   const [user, setUser] = useState('');
   const [pass, setPass] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     if (user === 'admin' && pass === '1234') {
+      localStorage.setItem('auth', 'true');
       navigate('/crud');
     } else {
       alert('Usuario o contraseña incorrectos');
@@ -23,7 +24,7 @@ const Login = () => {
           <Card className="shadow-lg border-0 rounded-4 p-3">
             <Card.Body>
               <h2 className="text-center mb-4">Iniciar Sesión</h2>
-              <Form onSubmit={handleSubmit}>
+              <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-4" controlId="formUsername">
                   <Form.Label>Usuario</Form.Label>
                   <Form.Control type="text" value={user} onChange={e => setUser(e.target.value)} required placeholder="Ingrese su usuario"/>
@@ -45,4 +46,3 @@ const Login = () => {
   );
 };
 
-export default Login;
