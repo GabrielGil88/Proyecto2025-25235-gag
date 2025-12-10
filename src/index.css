@@ -62,6 +62,23 @@ h6 {
   box-shadow: 0 4px 10px var(--color-shadow);
 }
 
+.btn-eliminar {
+  background-color: transparent;
+  color: var(--color-destructive);
+  border: 2px solid var(--color-destructive);
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+}
+
+.btn-eliminar:hover {
+  background-color:  var(--color-destructive);
+  border-color: var(--color-destructive);
+  color: var(--color-text-light);
+  box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+
 /* ProductCard */
 .product-card {
   width: 100%;
