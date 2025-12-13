@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from "react";
 import { CartContext } from './CartContext';
+import { formatARS } from './FormatARS';
 
 
 const ProductCard = ({ product, descuento = 0 }) => {
@@ -65,15 +66,15 @@ const ProductCard = ({ product, descuento = 0 }) => {
                     {tieneDescuento ? (
                         <div className="text-center">
                             <div className="text-muted ">
-                                <del>{'$' + precio.toFixed(2)}</del>
+                                <del>{formatARS(precio)}</del>
                             </div>
                             <div className="fw-bold fs-5">
-                                {'$' + precioConDescuento.toFixed(2)}
+                                {formatARS(precioConDescuento)}
                             </div>
                         </div>
                     ) : (
                         <Card.Text className="fw-bold fs-5 mb-0">
-                            {'$' + precio.toFixed(2)}
+                            {formatARS(precio)}
                         </Card.Text>
                     )}
 
