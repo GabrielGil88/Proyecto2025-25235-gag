@@ -83,7 +83,13 @@ const ProductCard = ({ product, descuento = 0 }) => {
                     ) : (
                         <Button
                             className="btn-primario px-4 ms-4 d-flex align-items-center justify-content-center gap-2"
-                            onClick={() => addCart(product)}
+                            onClick={() =>
+                                addCart({
+                                    ...product,
+                                    price: precio,
+                                    discountPercent: descuentoSeguro
+                                })
+                            }
                         >
                             <FontAwesomeIcon icon={faShoppingCart} />
                             Agregar

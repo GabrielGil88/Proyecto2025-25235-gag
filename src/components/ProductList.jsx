@@ -8,7 +8,7 @@ const FAKE_API = "https://fakestoreapi.com/products";
 
 const normalize = (s = '') => s.toString().toLowerCase().trim();
 
-const ProductList = ({ category = null, descuento = 0, limit = null }) => {
+const ProductList = ({ category = null, descuento = 0, limit = null, onlyDiscounted = false }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -66,7 +66,28 @@ const ProductList = ({ category = null, descuento = 0, limit = null }) => {
 
   if (loading) return <div>Cargando productos...</div>;
 
-  const productosMostrados = limit ? products.slice(0, limit) : products;
+  let productosFiltrados = products;
+
+  // filtrar por categoría (si aplica)
+  if (category) {
+    const catNorm = normalize(category);
+    productosFiltrados = productosFiltrados.filter(
+      (p) => p.category === catNorm
+    );
+  }
+
+  // filtrar solo ofertas (si aplica)
+  if (onlyDiscounted) {
+    productosFiltrados = productosFiltrados.filter(
+      (p) => Number(p.discount) > 0
+    );
+  }
+
+  // aplicar límite (si aplica)
+  const productosMostrados = limit
+    ? productosFiltrados.slice(0, limit)
+    : productosFiltrados;
+
 
   return (
     <Row>

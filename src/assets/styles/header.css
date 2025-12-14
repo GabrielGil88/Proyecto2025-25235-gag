@@ -69,6 +69,7 @@
     /* color que queremos que herede el svg */
     text-decoration: none;
     transition: color 0.18s ease, transform 0.18s ease;
+    position: relative;
 }
 
 .cart-link svg,
@@ -90,6 +91,20 @@
 .cart-link:hover svg,
 .cart-link:focus svg {
     transform: scale(1.08);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+    min-width: 18px;
+    text-align: center;
 }
 
 /* ==== RESPONSIVE ==== */
