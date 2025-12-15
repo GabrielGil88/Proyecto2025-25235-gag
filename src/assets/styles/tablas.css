@@ -1,0 +1,124 @@
+/* Tabla base */
+.cart-table th,
+.cart-table td {
+    vertical-align: middle !important;
+    /* centrado vertical (importante para bootstrap) */
+    white-space: nowrap;
+    max-width: max-content;
+    overflow: hidden;
+}
+
+/* Celda Producto: imagen + texto */
+.product-cell {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: start;
+}
+
+.product-thumb {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    border: 1px solid var(--color-border);
+    background: var(--color-card-bg);
+}
+
+.product-title {
+    max-width: 240px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    display: block;
+}
+
+/* Controles de cantidad */
+.qty-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+/* Quitar flechas del input number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Botones consistentes */
+.qty-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-align: center;
+    max-width: 40px;
+    min-width: 36px;
+    padding: .35rem .6rem;
+    border-radius: 6px;
+}
+
+.btn-secundario:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background-color: var(--color-disabled-bg);
+    border-color: var(--color-border);
+    color: var(--color-text-muted);
+}
+
+
+/* Subtotales y total */
+.cart-summary {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+
+    /* Acultamos columna 'Descuento' y 'Subtotal' para ajustar */
+    .cart-table thead th:nth-child(3),
+    .cart-table tbody td:nth-child(3),
+    .cart-table thead th:nth-child(5),
+    .cart-table tbody td:nth-child(5) {
+        display: none;
+    }
+
+    .product-thumb {
+        display: none;
+    }
+
+    .product-title {
+        max-width: 140px;
+        text-align: center;
+    }
+
+    .cart-table th,
+    .cart-table td {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        max-width: 80px;
+        overflow: hidden;
+    }
+
+    .cart-table {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .qty-controls {
+        flex-direction: column;
+    }
+
+    .btn-eliminar p {
+        display: none;
+    }
+}

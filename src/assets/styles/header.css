@@ -1,6 +1,6 @@
 /* ==== NAVBAR ==== */
 .navbar {
-    background: var(--color-card-bg);
+    background: var(--color-header);
     box-shadow: 0 4px 14px var(--color-shadow);
     padding: 0.8rem 1.5rem;
     transition: background 0.3s ease, box-shadow 0.3s ease;
@@ -69,6 +69,7 @@
     /* color que queremos que herede el svg */
     text-decoration: none;
     transition: color 0.18s ease, transform 0.18s ease;
+    position: relative;
 }
 
 .cart-link svg,
@@ -90,6 +91,20 @@
 .cart-link:hover svg,
 .cart-link:focus svg {
     transform: scale(1.08);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 100%;
+    padding: 2px 8px;
+    min-width: 18px;
+    text-align: center;
 }
 
 /* ==== RESPONSIVE ==== */

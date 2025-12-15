@@ -8,7 +8,7 @@ const FAKE_API = "https://fakestoreapi.com/products";
 
 const normalize = (s = '') => s.toString().toLowerCase().trim();
 
-const ProductList = ({ category = null, descuento = 0, limit = null }) => {
+const ProductList = ({ category = null, descuento = 0, limit = null, onlyDiscounted = false }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -27,7 +27,6 @@ const ProductList = ({ category = null, descuento = 0, limit = null }) => {
         const mockNormalized = mockData.map((p) => ({
           ...p,
           id: `mock-${p.id}`,          // <<< --- ID ÚNICO
-          originalId: p.id,            // opcional, por si lo necesitás después
           category: normalize(p.category || ''),
           source: 'mock',
           price: Number(p.price) || 0,
@@ -38,7 +37,6 @@ const ProductList = ({ category = null, descuento = 0, limit = null }) => {
         const fakeNormalized = fakeData.map((p) => ({
           ...p,
           id: `fake-${p.id}`,          // <<< --- ID ÚNICO
-          originalId: p.id,
           category: normalize(p.category || ''),
           source: 'fake',
           discount: Number(p.discount || 0),
@@ -47,7 +45,7 @@ const ProductList = ({ category = null, descuento = 0, limit = null }) => {
         // 4) Unir las listas
         let allProducts = [...mockNormalized, ...fakeNormalized];
 
-        // 5) Filtrar por categoría (si se pasó) usando la versión normalizada
+        // 5) Filtrar por categoría
         if (category) {
           const catNorm = normalize(category);
           allProducts = allProducts.filter((p) => p.category === catNorm);
@@ -66,7 +64,20 @@ const ProductList = ({ category = null, descuento = 0, limit = null }) => {
 
   if (loading) return <div>Cargando productos...</div>;
 
-  const productosMostrados = limit ? products.slice(0, limit) : products;
+  let productosFiltrados = products;
+
+  // filtrar solo ofertas (si aplica)
+  if (onlyDiscounted) {
+    productosFiltrados = productosFiltrados.filter(
+      (p) => Number(p.discount) > 0
+    );
+  }
+
+  // aplicar límite (si aplica)
+  const productosMostrados = limit
+    ? productosFiltrados.slice(0, limit)
+    : productosFiltrados;
+
 
   return (
     <Row>

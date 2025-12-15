@@ -1,17 +1,89 @@
-:root {
-    --color-primary: #3498db;
-    --color-primary-dark: #154564;
-    --color-secondary: #2ecc71;
-    --color-secondary-dark: #27ae60;
-    --color-background: #f5f5f5;
-    --color-card-bg: #ffffff;
-    --color-text: #333333;
-    --color-text-light: #FFFFFF;
-    --color-accent: #e6c325;
-    --color-destructive: #e20000;;
-    --color-shadow: rgba(0, 0, 0, 0.1);
-    --color-shadow-dark: rgba(0, 0, 0, 0.2);
-    --color-gray-light: #ebebeb;
-    --color-gray-dark: #6e6e6e;
-    --font-family: 'Arial', sans-serif;
-}
+  /* =========================
+     PALETA DE COLORES
+  ========================== */
+  :root {
+
+      --violet-50: #f3e8ff;
+      --violet-100: #e9d5ff;
+      --violet-200: #d8b4fe;
+      --violet-300: #c084fc;
+      --violet-400: #a855f7;
+      --violet-500: #8338EC;      /* PRIMARY */
+      --violet-600: #6f2fd0;
+      --violet-700: #5b21b6;
+      --violet-800: #4c1d95;
+      --violet-900: #2e1065;
+
+      --blue-50: #eff6ff;
+      --blue-100: #dbeafe;
+      --blue-200: #bfdbfe;
+      --blue-300: #93c5fd;
+      --blue-400: #60a5fa;
+      --blue-500: #3A86FF;
+      --blue-600: #2563eb;
+      --blue-700: #1d4ed8;
+      --blue-800: #1e40af;
+      --blue-900: #172554;
+
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+
+      /* DESTRUCTIVE */
+      --red-500: #e20000;
+      /* SUCCESS */
+      --green-500: #00b300;
+  }
+
+
+  /* =========================
+     TOKENS
+  ========================== */
+
+
+  :root {
+
+      /* Brand Colors */
+      --color-primary: var(--violet-500);
+      --color-primary-hover: var(--violet-700);
+      --color-primary-hover-light: var(--violet-300);
+      --color-primary-active: var(--violet-800);
+
+
+      --color-secondary: var(--blue-500);
+      --color-secondary-hover: var(--blue-600);
+      --color-secondary-active: var(--blue-700);
+
+
+      /* UI Colors */
+      --color-header: var(--blue-100);
+      --color-footer: var(--blue-100);
+      --color-background:  var(--blue-50);
+      --color-card-bg: var(--gray-50);
+      --color-border: var(--gray-300);
+      --color-disabled-bg: var(--gray-200);
+
+      /* Text Colors */
+      --color-text: var(--gray-900);
+      --color-text-muted: var(--gray-500);
+      --color-text-light: var(--gray-50);
+
+
+      /* Feedback Colors */
+      --color-destructive: var(--red-500);
+      --color-success: var(--green-500);
+
+      /* Effects */
+      --color-shadow: rgba(0, 0, 0, 0.1);
+      --color-shadow-dark: rgba(0, 0, 0, 0.2);
+
+      /* Typography */
+      --font-family: 'Arial', sans-serif;
+  }

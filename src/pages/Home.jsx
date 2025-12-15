@@ -15,7 +15,6 @@ const Home = () => {
       <Container className="seccion">
         <h2>Productos destacados</h2>
         <ProductList category="electronics" limit={4} />
-        <Elegirnos />
         <Button
           as={Link}
           to="/productos"
@@ -23,6 +22,7 @@ const Home = () => {
         >
           Ver todos los productos
         </Button>
+        <Elegirnos />
       </Container>
     </div>
   );

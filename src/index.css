@@ -9,7 +9,6 @@ body {
 .seccion {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 2rem;
   min-height: 70vh;
   padding: 4rem 1rem;
@@ -27,38 +26,44 @@ h6 {
   text-align: center;
 }
 
+p {
+  margin: 0;
+}
+
 /* Botones */
 .btn-primario {
   background-color: var(--color-primary);
   color: var(--color-text-light);
-  border: 1px solid var(--color-primary);
-  border-radius: 50px;
+  border: 1.8px solid var(--color-primary-hover);
+  border-radius: 40px;
   font-weight: 600;
   transition: all 0.3s ease;
   padding: 0.6rem 1.4rem;
-  letter-spacing: 0.3px;
+  text-decoration: none;
 }
 
 .btn-primario:hover {
-  background-color: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-  color: var(--color-primary);
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-active);
+  color: var(--color-text-light);
   box-shadow: 0 4px 10px var(--color-shadow);
 }
 
 .btn-secundario {
   background-color: transparent;
-  color: var(--color-text);
-  border: 2px solid var(--color-text);
-  border-radius: 50px;
+  color: var(--color-primary);
+  border: 1.8px solid var(--color-primary);
+  border-radius: 40px;
   font-weight: 600;
+  transition: all 0.3s ease;
   padding: 0.6rem 1.4rem;
+  text-decoration: none;
 }
 
 .btn-secundario:hover {
-  background-color: var(--color-text);
-  border-color: var(--color-text);
-  color: var(--color-text-light);
+  background-color: var(--color-primary-hover-light);
+  border-color: var(--color-primary-hover);
+  color: var(--color-text);
   box-shadow: 0 4px 10px var(--color-shadow);
 }
 
@@ -66,13 +71,13 @@ h6 {
   background-color: transparent;
   color: var(--color-destructive);
   border: 2px solid var(--color-destructive);
-  border-radius: 50px;
+  border-radius: 40px;
   font-weight: 600;
   padding: 0.6rem 1.4rem;
 }
 
 .btn-eliminar:hover {
-  background-color:  var(--color-destructive);
+  background-color: var(--color-destructive);
   border-color: var(--color-destructive);
   color: var(--color-text-light);
   box-shadow: 0 4px 10px var(--color-shadow);
@@ -82,6 +87,7 @@ h6 {
 /* ProductCard */
 .product-card {
   width: 100%;
+  height: 100%;
   background-color: var(--color-card-bg);
   transition: transform 200ms ease, box-shadow 200ms ease;
   will-change: transform;
@@ -124,4 +130,14 @@ h6 {
   .carrusel .carousel-item {
     height: 70vh;
   }
+}
+
+
+/* Badge OFF*/
+.badge {
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
 }
