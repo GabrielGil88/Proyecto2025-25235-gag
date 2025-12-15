@@ -27,7 +27,6 @@ const ProductList = ({ category = null, descuento = 0, limit = null, onlyDiscoun
         const mockNormalized = mockData.map((p) => ({
           ...p,
           id: `mock-${p.id}`,          // <<< --- ID ÚNICO
-          originalId: p.id,            // opcional, por si lo necesitás después
           category: normalize(p.category || ''),
           source: 'mock',
           price: Number(p.price) || 0,
@@ -38,7 +37,6 @@ const ProductList = ({ category = null, descuento = 0, limit = null, onlyDiscoun
         const fakeNormalized = fakeData.map((p) => ({
           ...p,
           id: `fake-${p.id}`,          // <<< --- ID ÚNICO
-          originalId: p.id,
           category: normalize(p.category || ''),
           source: 'fake',
           discount: Number(p.discount || 0),
@@ -47,7 +45,7 @@ const ProductList = ({ category = null, descuento = 0, limit = null, onlyDiscoun
         // 4) Unir las listas
         let allProducts = [...mockNormalized, ...fakeNormalized];
 
-        // 5) Filtrar por categoría (si se pasó) usando la versión normalizada
+        // 5) Filtrar por categoría
         if (category) {
           const catNorm = normalize(category);
           allProducts = allProducts.filter((p) => p.category === catNorm);
@@ -67,14 +65,6 @@ const ProductList = ({ category = null, descuento = 0, limit = null, onlyDiscoun
   if (loading) return <div>Cargando productos...</div>;
 
   let productosFiltrados = products;
-
-  // filtrar por categoría (si aplica)
-  if (category) {
-    const catNorm = normalize(category);
-    productosFiltrados = productosFiltrados.filter(
-      (p) => p.category === catNorm
-    );
-  }
 
   // filtrar solo ofertas (si aplica)
   if (onlyDiscounted) {

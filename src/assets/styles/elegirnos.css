@@ -21,7 +21,7 @@
 
 .benefit-card:hover .icono {
     transform: scale(1.1);
-    color: var(--color-accent);
+    color: var(--color-primary-active);
 }
 
 .benefit-card h5,

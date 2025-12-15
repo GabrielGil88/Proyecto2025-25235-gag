@@ -13,7 +13,7 @@ const OfertasCarrusel = () => {
                     alt="Primera imagen de ofertas"
                 />
                 <Carousel.Caption>
-                    <Button className="btn-secundario fw-bold mb-5 px-5">Ver más</Button>
+                    <Button className="btn-primario fw-bold mb-2 px-5">Ver más</Button>
                 </Carousel.Caption>
             </Carousel.Item>
 
@@ -23,7 +23,7 @@ const OfertasCarrusel = () => {
                     alt="Segunda imagen de ofertas"
                 />
                 <Carousel.Caption>
-                    <Button className="btn-secundario fw-bold mb-5 px-5">Ver más</Button>
+                    <Button className="btn-primario fw-bold mb-2 px-5">Ver más</Button>
                 </Carousel.Caption>
             </Carousel.Item>
 
@@ -33,7 +33,7 @@ const OfertasCarrusel = () => {
                     alt="Tercera imagen de ofertas"
                 />
                 <Carousel.Caption>
-                    <Button className="btn-secundario fw-bold mb-5 px-5">Ver más</Button>
+                    <Button className="btn-primario fw-bold mb-2 px-5">Ver más</Button>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

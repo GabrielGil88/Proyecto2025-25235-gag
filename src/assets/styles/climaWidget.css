@@ -1,5 +1,5 @@
 :root{
-  --banner-height: 56px;
+  --banner-height: 40px;
   --duration: 20s; /* ajustá la velocidad */
 }
 
@@ -9,9 +9,9 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   box-sizing: border-box;
-  background: var(--color-primary);
+  background: var(--color-header);
 }
 
 
@@ -33,7 +33,7 @@
   border-radius: 8px;
   min-width: 140px;
   white-space: nowrap;
-  box-shadow: 0 1px 4px var(--color-shadow);
+  box-shadow: 0 1px 1px var(--color-shadow);
   border: 1px groove var(--color-gray-light);
   font-family: system-ui, sans-serif;
   font-size: 0.9rem;

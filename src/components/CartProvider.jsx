@@ -55,6 +55,7 @@ export const CartProvider = ({ children }) => {
 
     // Función para eliminar un producto del carrito
     const removeCart = (productId) => {
+        if (!window.confirm("¿Seguro que quieres eliminar el producto?")) return;
         setCartItems((prevItems) =>
             prevItems.filter(item => item.id !== productId)
         );
@@ -62,6 +63,7 @@ export const CartProvider = ({ children }) => {
 
     // Función para limpiar el carrito
     const clearCart = () => {
+        if (!window.confirm("¿Seguro de vaciar el carrito de compras?")) return;
         setCartItems([]);
     }
 

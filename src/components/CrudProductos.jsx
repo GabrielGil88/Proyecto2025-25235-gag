@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button, Form, Modal } from "react-bootstrap";
+import '../assets/styles/tablas.css';
+import { formatARS } from "./FormatARS";
 
 const API_URL = "https://6924d4c582b59600d72184e2.mockapi.io/Products";
 
@@ -105,7 +107,7 @@ const CrudProductos = () => {
             </div>
 
 
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive className="cart-table">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -113,7 +115,7 @@ const CrudProductos = () => {
                         <th>Categoría</th>
                         <th>Descripción</th>
                         <th>Precio</th>
-                        <th style={{ width: "120px" }}>Descuento %</th>
+                        <th>Descuento</th>
                         <th>Stock</th>
                         <th>Imagen</th>
                         <th>Acciones</th>
@@ -123,11 +125,11 @@ const CrudProductos = () => {
                     {productos.map((prod) => (
                         <tr key={prod.id}>
                             <td>{prod.id}</td>
-                            <td>{prod.title}</td>
-                            <td>{prod.category}</td>
-                            <td>{prod.description}</td>
-                            <td>${Number(prod.price).toFixed(2)}</td>
-                            <td>{prod.discount}</td>
+                            <td style={{ maxWidth: "180px" }}>{prod.title}</td>
+                            <td style={{ maxWidth: "80px"}}>{prod.category}</td>
+                            <td style={{ maxWidth: "180px" }}>{prod.description}</td>
+                            <td> {formatARS(prod.price)}</td>
+                            <td style={{ }}>{prod.discount} %</td>
                             <td>{prod.stock}</td>
                             <td>
                                 {prod.image?.startsWith("http") ? (
